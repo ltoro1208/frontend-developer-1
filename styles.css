@@ -114,6 +114,48 @@
             margin-bottom: 20px;
             display: inline-block;
         }
+
+/*Mobile menu*/
+        .menu{
+            cursor: pointer;
+        }
+        .mobile-menu{
+            padding: 24px;
+            position: absolute;
+                background-color: var(--white);;
+                left: 10px; top: 91px;
+        }
+        .mobile-menu a{
+        text-decoration: none;
+        color: var(--black);
+        font-weight: bold;
+        /*margin-bottom: 24px;*/
+        }
+        .mobile-menu ul{
+            padding: 0;
+            margin: 24px 0 0;
+            list-style: none;
+        }
+        .mobile-menu ul li{
+            margin-bottom: 24px;
+        }
+        .mobile-menu ul:nth-child(1){
+            border-bottom: 1px solid var(--very-light-pink);
+        }
+        .mobile-menu .email{
+            font-size: var(--sm);
+            font-weight: 300;
+        }
+        .mobile-menu .sign-out{
+            font-size: var(--sm);
+            color: var(--hospital-green);
+        }
+        /*Modificar para que el email y el sign out queden
+        al final de la pantalla*/
+        .mobile-menu ul:last-child{
+            display: inline-block;
+            margin-top: 30%;
+        }
 /*Open and Close menu*/
        .inactive{
         display: none;
