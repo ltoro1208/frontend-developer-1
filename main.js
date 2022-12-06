@@ -94,7 +94,7 @@ const productList = [];
             /*Se recomienda construir esta estructura de abajo hacia arriba*/
             figure_container.append(img_figure);
             div_container.append(product_price, product_name);
-            product_info.append(div_container);
+            product_info.append(div_container, figure_container);
             product_card.append(product_img, product_info);
 
             const cards_container = document.querySelector('.cards-container');
