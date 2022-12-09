@@ -9,12 +9,15 @@
     const shopping_car = document.querySelector('.nav-bar-shopping-card');
     const title_container = document.querySelector('.title-container');
 
+    const product_detail = document.querySelector('.product-detail');
+
 /--- emailMenu dinámico: activado y desactivado con un click---/
     menuEmail.addEventListener('click', showDesktopMenu);
 
         function showDesktopMenu(){
             desktop_menu.classList.toggle('inactive');
             cart_detail.classList.add('inactive');
+            product_detail.classList.add('inactive');
         }
 
 /---mobileMenu dinámico: activado y desactivado con un click---/
@@ -23,6 +26,7 @@
         function showMobileMenu(){
             mobile_menu.classList.toggle('inactive');
             cart_detail.classList.add('inactive');
+            product_detail.classList.add('inactive');
         }
 
 /---desktop: shopping car---/
@@ -33,6 +37,7 @@
             cart_detail.classList.toggle('inactive');
             desktop_menu.classList.add('inactive');
             mobile_menu.classList.add('inactive');
+            product_detail.classList.add('inactive');
         }
 
 /---render products---/
@@ -73,9 +78,11 @@ const productList = [];
             /*Maquetación de los elementos del cards-container*/
             const product_card = document.createElement('div');
                 product_card.classList.add('product-card');
+                product_card.style.cursor=('pointer');
 
             const product_img = document.createElement('img');
                 product_img.setAttribute('src', x.image);
+                product_img.addEventListener('click', openProdductDetail);
 
             const product_info = document.createElement('div');
                 product_info.classList.add('product-info');
@@ -103,3 +110,13 @@ const productList = [];
     }
 
     renderProducts(productList);
+
+const product_detail_close = document.querySelector('.product-detail-close');
+product_detail_close.addEventListener('click', closeProductDetail);
+    function closeProductDetail(){
+    product_detail.classList.add('inactive');
+    }
+
+function openProdductDetail(){
+    product_detail.classList.remove('inactive');
+}
